@@ -1,0 +1,1 @@
+INSERT INTO tb_veterinario(cpf, email, nome, telefone) VALUES ('000.000.000-00', 'emailZe@gmail.com', 'Ze da Silva', '9-0000-0000');
