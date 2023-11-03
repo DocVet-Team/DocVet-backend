@@ -30,14 +30,9 @@ public class VeterinarioService {
         Veterinario existente = repository.findById(id).get();
 
         existente.setNome(veterinario.getNome());
-        existente.setEndereco(veterinario.getEndereco());
         existente.setEmail(veterinario.getEmail());
-        existente.setTelefone(veterinario.getTelefone());
         existente.setFoto(veterinario.getFoto());
         existente.setCrmv(veterinario.getCrmv());
-        // existente.setEspecialidades(veterinario.getEspecialidades());
-        // existente.setPortes(veterinario.getPortes());
-        // existente.setTiposAnimal(veterinario.getTiposAnimal());
 
         repository.saveAndFlush(existente);
 
