@@ -21,7 +21,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("api/v1/veterinario")
+@RequestMapping("api/v1/veterinarios")
 public class VeterinarioController {
 
     @Autowired
