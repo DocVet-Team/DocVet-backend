@@ -1,9 +1,15 @@
 package br.com.docvet.docvet.domain;
 
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Embedded;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.OneToMany;
 
 // @Entity
 @MappedSuperclass
@@ -22,6 +28,10 @@ public class Pessoa {
     private String email;
 
     private String foto;
+
+    @EmbeddedId
+    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Telefone> telefones;
 
     public Integer getId() {
         return id;
