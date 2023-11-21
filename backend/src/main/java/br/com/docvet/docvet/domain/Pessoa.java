@@ -2,19 +2,21 @@ package br.com.docvet.docvet.domain;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
-// @Entity
-@MappedSuperclass
-// @Inheritance(strategy = InheritanceType.JOINED)
-// @Table(uniqueConstraints = @UniqueConstraint(columnNames = "cpf"), name = "tb_pessoaF")
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "tb_pessoa")
 public class Pessoa {
 
     @Id
@@ -29,7 +31,7 @@ public class Pessoa {
 
     private String foto;
 
-    @EmbeddedId
+    @JsonManagedReference
     @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Telefone> telefones;
 
