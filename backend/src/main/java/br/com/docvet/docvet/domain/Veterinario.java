@@ -1,5 +1,7 @@
 package br.com.docvet.docvet.domain;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
@@ -8,6 +10,9 @@ import jakarta.persistence.Table;
 public class Veterinario extends Pessoa{
 
     private String crmv;
+
+    
+    private List<Especialidade> especialidades;
 
     Veterinario(){}
 
