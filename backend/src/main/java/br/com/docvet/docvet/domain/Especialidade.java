@@ -1,9 +1,14 @@
 package br.com.docvet.docvet.domain;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,8 +21,9 @@ public class Especialidade {
 
     private String especialidade;
 
-    //Adicionar veterinario aqui
-    
+    @ManyToMany
+    @JoinTable(name = "tb_vet_esp", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "esp_id"))
+    private List<Veterinario> veterinarios;
 
     public Especialidade() {}
 
@@ -42,5 +48,11 @@ public class Especialidade {
         this.especialidade = especialidade;
     }
 
+    public List<Veterinario> getVeterinarios() {
+        return veterinarios;
+    }
 
+    public void setVeterinarios(List<Veterinario> veterinarios) {
+        this.veterinarios = veterinarios;
+    }
 }
