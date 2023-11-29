@@ -53,7 +53,7 @@ public class EspecialidadeController {
 
     }
 
-    @PutMapping("/")
+    @PutMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody Especialidade especialidade){
         service.update(id, especialidade);
 
