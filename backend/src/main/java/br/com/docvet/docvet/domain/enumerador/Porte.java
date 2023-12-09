@@ -1,6 +1,5 @@
 package br.com.docvet.docvet.domain.enumerador;
 
-import lombok.Getter;
 
 public enum Porte{
 
@@ -25,6 +24,6 @@ public enum Porte{
         return porte;
     }
 
-    
+
 
 }

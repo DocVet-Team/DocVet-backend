@@ -17,7 +17,8 @@ public class Especialidade {
     private String especialidade;
 
     //Adicionar veterinario aqui
-    
+
+
 
     public Especialidade() {}
 
