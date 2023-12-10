@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.docvet.docvet.EstadoDto.NovaSenhaDto;
 import br.com.docvet.docvet.domain.Pessoa;
+import br.com.docvet.docvet.domain.dto.CredenciaisDto;
 import br.com.docvet.docvet.service.PessoaService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -62,17 +63,23 @@ public class PessoaController {
     }
 
     @PatchMapping("/alterarSenha/")
-    public ResponseEntity<Void> alterarSenha(@RequestBody NovaSenhaDto novaSenha){
+    public ResponseEntity<Void> alterarSenha(@RequestBody CredenciaisDto novaSenha){
         service.alterarSenha(novaSenha);
 
         return ResponseEntity.ok().build();
     }
-
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         service.delete(id);
 
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("/login/")
+    public ResponseEntity<Void> login(@RequestBody CredenciaisDto loginDados) {
+        service.login(loginDados);
+
+        return ResponseEntity.ok().build();
     }
 }

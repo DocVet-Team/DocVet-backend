@@ -6,4 +6,6 @@ import br.com.docvet.docvet.domain.Pessoa;
 
 public interface PessoaRepository extends JpaRepository<Pessoa, Integer>{
     Pessoa findByEmail(String email);
+    Boolean existsByEmail(String email);
+    Boolean existsBySenha(String senha);
 }

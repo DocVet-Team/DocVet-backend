@@ -1,10 +1,17 @@
 package br.com.docvet.docvet.domain;
 
+import java.util.List;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.ManyToMany;
+
 import jakarta.persistence.OneToMany;
 
 import jakarta.persistence.Table;
@@ -16,10 +23,12 @@ public class Veterinario extends Pessoa{
 
     private String crmv;
 
-
-
     @OneToMany(mappedBy = "veterinario", fetch = FetchType.LAZY, cascade = {CascadeType.DETACH})
-    private Set<EndAtendimento> endAtendimentos; 
+    private Set<EndAtendimento> endAtendimentos;
+
+    @ManyToMany(mappedBy = "veterinarios")
+    private List<Especialidade> especialidades;
+
 
 
     Veterinario(){}
@@ -31,8 +40,6 @@ public class Veterinario extends Pessoa{
         this.setFoto(foto);
         this.crmv = crmv;
     }
-  
-  
 
     public String getCrmv() {
         return crmv;

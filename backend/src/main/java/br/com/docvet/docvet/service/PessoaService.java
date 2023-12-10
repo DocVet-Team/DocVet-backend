@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import br.com.docvet.docvet.EstadoDto.NovaSenhaDto;
 import br.com.docvet.docvet.domain.Pessoa;
+import br.com.docvet.docvet.domain.dto.CredenciaisDto;
+import br.com.docvet.docvet.domain.dto.CredenciaisDto;
+import br.com.docvet.docvet.domain.error.NotFoundException;
 import br.com.docvet.docvet.repository.PessoaRepository;
 
 @Service
@@ -42,7 +45,7 @@ public class PessoaService {
         repository.deleteById(id);
     }
 
-    public void alterarSenha(NovaSenhaDto novaSenha) {
+    public void alterarSenha(CredenciaisDto novaSenha) {
 
         Pessoa pessoaExistente = repository.findByEmail(novaSenha.getEmail());
 
@@ -50,8 +53,15 @@ public class PessoaService {
             pessoaExistente.setSenha(novaSenha.getSenha());
             repository.saveAndFlush(pessoaExistente);
         }else{
-            System.out.println("------------------- Karol" + novaSenha.getEmail() + " " + novaSenha.getSenha());
-            System.out.println("------------------- Karol" + pessoaExistente.getEmail());
+            throw new NotFoundException("Usuário com o email " + novaSenha.getEmail() + " não cadastrado.");
+        }
+    }
+
+    public void login(CredenciaisDto loginDados) {
+        if (repository.existsByEmail(loginDados.getEmail()) && repository.existsBySenha(loginDados.getSenha())){
+
+        }else{
+            throw new NotFoundException("Usuário não cadastrado");
         }
     }
 
