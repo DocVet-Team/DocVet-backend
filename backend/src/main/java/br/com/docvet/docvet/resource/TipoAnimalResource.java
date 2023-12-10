@@ -15,47 +15,46 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.docvet.docvet.domain.Especialidade;
-import br.com.docvet.docvet.service.EspecialidadeService;
+import br.com.docvet.docvet.domain.TipoAnimal;
+import br.com.docvet.docvet.service.TipoAnimalService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("/api/v1/especialidades")
-public class EspecialidadeController {
+@RequestMapping("/api/v1/tipo-animais")
+public class TipoAnimalResource {
 
     @Autowired
-    private EspecialidadeService service;
-
-    @GetMapping("/")
-    public ResponseEntity<List<Especialidade>> getAll(){
-        return ResponseEntity.ok().body(service.getAll());
-    }
+    private TipoAnimalService service;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Especialidade> getOne(@PathVariable Integer id){
+    public ResponseEntity<TipoAnimal> getOne(@PathVariable Integer id){
         return ResponseEntity.ok().body(service.getOne(id));
     }
 
+    @GetMapping("/")
+    public ResponseEntity<List<TipoAnimal>> getAll(){
+        return ResponseEntity.ok().body(service.getAll());
+    }
+
     @PostMapping("/")
-    public ResponseEntity<Void> save(@RequestBody Especialidade especialidade, HttpServletRequest request, HttpServletResponse response) throws URISyntaxException{
-        service.save(especialidade);
+    public ResponseEntity<Void> save(@RequestBody TipoAnimal tipoAnimal, HttpServletRequest request, HttpServletResponse response) throws URISyntaxException{
+        service.save(tipoAnimal);
 
         StringBuffer path = new StringBuffer();
 
         path.append(request.getServletPath())
             .append("/")
-            .append(especialidade.getId());
+            .append(tipoAnimal.getId());
 
         URI uri = new URI(path.toString());
 
         return ResponseEntity.created(uri).build();
-
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody Especialidade especialidade){
-        service.update(id, especialidade);
+    public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody TipoAnimal tipoAnimal){
+        service.update(id, tipoAnimal);
 
         return ResponseEntity.ok().build();
     }
@@ -63,7 +62,7 @@ public class EspecialidadeController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Integer id){
         service.delete(id);
-
         return ResponseEntity.noContent().build();
     }
+
 }

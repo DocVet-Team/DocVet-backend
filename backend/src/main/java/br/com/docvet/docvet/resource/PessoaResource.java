@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,53 +16,69 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.docvet.docvet.domain.Veterinario;
-import br.com.docvet.docvet.service.VeterinarioService;
+import br.com.docvet.docvet.domain.Pessoa;
+import br.com.docvet.docvet.domain.dto.CredenciaisDto;
+import br.com.docvet.docvet.service.PessoaService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
-@RequestMapping("/api/v1/veterinarios")
-public class VeterinarioController {
+@RequestMapping("/api/v1/pessoas")
+public class PessoaResource {
 
     @Autowired
-    private VeterinarioService service;
+    private PessoaService service;
 
     @GetMapping("/{id}")
-    public ResponseEntity<Veterinario> getOne(@PathVariable Integer id){
+    public ResponseEntity<Pessoa> getOne(@PathVariable Integer id){
         return ResponseEntity.ok().body(service.getOne(id));
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<Veterinario>> getAll(){
+    public ResponseEntity<List<Pessoa>> getAll(){
         return ResponseEntity.ok().body(service.getAll());
     }
 
     @PostMapping("/")
-    public ResponseEntity<Void> post(@RequestBody Veterinario veterinario, HttpServletRequest request, HttpServletResponse response) throws URISyntaxException{
-        service.save(veterinario);
+    public ResponseEntity<Void> save(@RequestBody Pessoa pessoa, HttpServletRequest request, HttpServletResponse response) throws URISyntaxException{
+        service.save(pessoa);
 
         StringBuffer path = new StringBuffer();
 
-        path.append(request.getRequestURI())
+        path.append(request.getServletPath())
             .append("/")
-            .append(veterinario.getId());
+            .append(pessoa.getId());
 
         URI uri = new URI(path.toString());
 
         return ResponseEntity.created(uri).build();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Void> update(@RequestBody Veterinario veterinario, @PathVariable Integer id){
-        service.update(veterinario, id);
+    @PutMapping("/")
+    public ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody Pessoa pessoa){
+        service.update(id, pessoa);
+
+        return ResponseEntity.ok().build();
+    }
+
+    @PatchMapping("/alterarSenha/")
+    public ResponseEntity<Void> alterarSenha(@RequestBody CredenciaisDto novaSenha){
+        service.alterarSenha(novaSenha);
+
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteById(@PathVariable Integer id){
+    public ResponseEntity<Void> delete(@PathVariable Integer id){
         service.delete(id);
+
         return ResponseEntity.noContent().build();
     }
 
+    @PostMapping("/login/")
+    public ResponseEntity<Void> login(@RequestBody CredenciaisDto loginDados) {
+        service.login(loginDados);
+
+        return ResponseEntity.ok().build();
+    }
 }
