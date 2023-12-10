@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.docvet.docvet.EstadoDto.NovaSenhaDto;
 import br.com.docvet.docvet.domain.Pessoa;
 import br.com.docvet.docvet.domain.dto.CredenciaisDto;
 import br.com.docvet.docvet.service.PessoaService;

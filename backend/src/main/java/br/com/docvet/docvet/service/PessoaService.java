@@ -5,9 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.docvet.docvet.EstadoDto.NovaSenhaDto;
 import br.com.docvet.docvet.domain.Pessoa;
-import br.com.docvet.docvet.domain.dto.CredenciaisDto;
 import br.com.docvet.docvet.domain.dto.CredenciaisDto;
 import br.com.docvet.docvet.domain.error.NotFoundException;
 import br.com.docvet.docvet.repository.PessoaRepository;
