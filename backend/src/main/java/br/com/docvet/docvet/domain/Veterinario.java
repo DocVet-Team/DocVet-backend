@@ -6,10 +6,12 @@ import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToMany;
+
 import jakarta.persistence.OneToMany;
 
 import jakarta.persistence.Table;
@@ -26,6 +28,7 @@ public class Veterinario extends Pessoa{
 
     @ManyToMany(mappedBy = "veterinarios")
     private List<Especialidade> especialidades;
+
 
 
     Veterinario(){}
