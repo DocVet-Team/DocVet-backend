@@ -26,4 +26,17 @@ public enum Porte{
 
 
 
+    public Porte getByValor(int valor){
+        for (Porte porte : values()){
+            if (porte.getValor() == valor){
+                return porte;
+            }
+        }
+
+        throw new IllegalArgumentException("Porte não existente: " + valor);
+    }
+
+
+
+
 }
