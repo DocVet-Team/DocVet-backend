@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.docvet.docvet.EstadoDto.NovaSenhaDto;
 import br.com.docvet.docvet.domain.Pessoa;
 import br.com.docvet.docvet.repository.PessoaRepository;
 
@@ -39,6 +40,19 @@ public class PessoaService {
 
     public void delete(Integer id){
         repository.deleteById(id);
+    }
+
+    public void alterarSenha(NovaSenhaDto novaSenha) {
+
+        Pessoa pessoaExistente = repository.findByEmail(novaSenha.getEmail());
+
+        if (repository.existsById(pessoaExistente.getId())){
+            pessoaExistente.setSenha(novaSenha.getSenha());
+            repository.saveAndFlush(pessoaExistente);
+        }else{
+            System.out.println("------------------- Karol" + novaSenha.getEmail() + " " + novaSenha.getSenha());
+            System.out.println("------------------- Karol" + pessoaExistente.getEmail());
+        }
     }
 
 }

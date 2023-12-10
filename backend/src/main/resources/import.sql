@@ -1,8 +1,8 @@
 -- INSERT INTO tb_veterinario(cpf, email, nome) VALUES ('000.000.000-00', 'emailZe@gmail.com', 'Ze da Silva');
 
-INSERT INTO tb_pessoa(cpf, nome) VALUES ('12345678911', 'Ricardo Lucas da Silva');
-INSERT INTO tb_pessoa(cpf, nome) VALUES ('78945612332', 'Alberto Campos');
-INSERT INTO tb_pessoa(cpf, nome) VALUES ('15948723159', 'Lucas dos Santos');
+INSERT INTO tb_pessoa(cpf, nome, email, senha) VALUES ('12345678911', 'Ricardo Lucas da Silva', 'ricardo@gmail.com.br', '123');
+INSERT INTO tb_pessoa(cpf, nome, email, senha) VALUES ('78945612332', 'Alberto Campos', 'alberto@gmail.com.br', '456');
+INSERT INTO tb_pessoa(cpf, nome, email, senha) VALUES ('15948723159', 'Lucas dos Santos', 'lucas@yahoo.com.br', '789');
 
 INSERT INTO tb_veterinario(id, crmv) VALUES(1, '65465462');
 
