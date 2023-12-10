@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.docvet.docvet.domain.Especialidade;
+import br.com.docvet.docvet.domain.error.NotFoundException;
 import br.com.docvet.docvet.repository.EspecialidadeRepository;
 
 @Service
@@ -16,7 +17,7 @@ public class EspecialidadeService {
 
 
     public Especialidade getOne(Integer id){
-        return repository.findById(id).get();
+        return repository.findById(id).orElseThrow(()-> new NotFoundException("Especialidade não encontrada: id="+id));
     }
 
     public List<Especialidade> getAll(){
@@ -28,14 +29,19 @@ public class EspecialidadeService {
     }
 
     public void update(Integer id, Especialidade especialidade){
-        Especialidade especialidadeExistente = repository.findById(id).get();
+        if (!repository.existsById(especialidade.getId())) {
+            throw new NotFoundException("Especialidade não encontrada: id="+especialidade.getId());
+        }
+        // Especialidade especialidadeExistente = repository.findById(id).get();
 
-        especialidadeExistente.setEspecialidade(especialidade.getEspecialidade());
+        // especialidadeExistente.setEspecialidade(especialidade.getEspecialidade());
 
-        repository.saveAndFlush(especialidadeExistente);
+        repository.saveAndFlush(especialidade);
     }
 
     public void delete(Integer id){
-        repository.deleteById(id);
+        if (!repository.existsById(id)) {
+            throw new NotFoundException("Especialidade não encontrada: id="+id);
+        }
     }
 }

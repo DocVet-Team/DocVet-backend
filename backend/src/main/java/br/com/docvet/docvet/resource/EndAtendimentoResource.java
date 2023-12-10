@@ -18,7 +18,7 @@ import br.com.docvet.docvet.domain.EndAtendimento;
 import br.com.docvet.docvet.service.EndAtendimentoService;
 
 @RestController
-@RequestMapping("api/v1/enderecos")
+@RequestMapping("/api/v1/enderecos")
 public class EndAtendimentoResource {
 
     @Autowired
