@@ -21,9 +21,11 @@ public class Especialidade {
 
     private String especialidade;
 
+
     @ManyToMany
     @JoinTable(name = "tb_vet_esp", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "esp_id"))
     private List<Veterinario> veterinarios;
+
 
     public Especialidade() {}
 

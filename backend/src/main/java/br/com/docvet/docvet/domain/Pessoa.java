@@ -2,16 +2,14 @@ package br.com.docvet.docvet.domain;
 
 import java.util.Set;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -31,9 +29,11 @@ public class Pessoa {
 
     private String foto;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "pessoa", cascade = CascadeType.ALL, orphanRemoval = true)
-    private Set<Telefone> telefones;
+    private String senha;
+
+    @ElementCollection
+    @Column(name = "telefones")
+    private Set<String> telefones;
 
     public Integer getId() {
         return id;
@@ -73,5 +73,21 @@ public class Pessoa {
 
     public void setFoto(String foto) {
         this.foto = foto;
+    }
+
+    public void setSenha(String senha){
+        this.senha = senha;
+    }
+
+    public String getSenha(){
+        return senha;
+    }
+
+    public void setTelefones(Set<String> telefones){
+        this.telefones = telefones;
+    }
+
+    public Set<String> getTelefones(){
+        return telefones;
     }
 }

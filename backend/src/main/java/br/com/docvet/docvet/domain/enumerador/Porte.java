@@ -1,6 +1,5 @@
 package br.com.docvet.docvet.domain.enumerador;
 
-import lombok.Getter;
 
 public enum Porte{
 
@@ -25,6 +24,8 @@ public enum Porte{
         return porte;
     }
 
+
+
     public Porte getByValor(int valor){
         for (Porte porte : values()){
             if (porte.getValor() == valor){
@@ -34,6 +35,7 @@ public enum Porte{
 
         throw new IllegalArgumentException("Porte não existente: " + valor);
     }
+
 
 
 
