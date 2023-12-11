@@ -1,7 +1,9 @@
 package br.com.docvet.docvet.domain;
 
 import java.util.List;
+import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,16 +24,20 @@ public class Especialidade {
     private String especialidade;
 
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.MERGE})
     @JoinTable(name = "tb_vet_esp", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "esp_id"))
-    private List<Veterinario> veterinarios;
+    private Set<Veterinario> veterinarios;
+
+
+    // private Set<Veterinario> veterinarios;
 
 
     public Especialidade() {}
 
-    public Especialidade(Integer id, String especialidade) {
+    public Especialidade(Integer id, String especialidade, Set<Veterinario> veterinarios) {
         this.id = id;
         this.especialidade = especialidade;
+        this.veterinarios = veterinarios;
     }
 
     public Integer getId() {
@@ -50,11 +56,11 @@ public class Especialidade {
         this.especialidade = especialidade;
     }
 
-    public List<Veterinario> getVeterinarios() {
+    public Set<Veterinario> getVeterinarios() {
         return veterinarios;
     }
 
-    public void setVeterinarios(List<Veterinario> veterinarios) {
+    public void setVeterinarios(Set<Veterinario> veterinarios) {
         this.veterinarios = veterinarios;
     }
 }

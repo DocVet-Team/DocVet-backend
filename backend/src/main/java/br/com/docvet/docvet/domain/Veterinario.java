@@ -26,19 +26,20 @@ public class Veterinario extends Pessoa{
     @OneToMany(mappedBy = "veterinario", fetch = FetchType.LAZY, cascade = {CascadeType.DETACH})
     private Set<EndAtendimento> endAtendimentos;
 
-    @ManyToMany(mappedBy = "veterinarios")
-    private List<Especialidade> especialidades;
+    @ManyToMany(mappedBy = "veterinarios", cascade = {CascadeType.MERGE})
+    private Set<Especialidade> especialidades;
 
-
+    // private Set<Especialidade> especialidades;
 
     Veterinario(){}
 
-    Veterinario(String nome, String cpf, String email, String foto, String crmv){
+    Veterinario(String nome, String cpf, String email, String foto, String crmv, Set<Especialidade> especialidades){
         this.setNome(nome);
         this.setCpf(cpf);
         this.setEmail(email);
         this.setFoto(foto);
         this.crmv = crmv;
+        this.especialidades = especialidades;
     }
 
     public String getCrmv() {
@@ -49,11 +50,11 @@ public class Veterinario extends Pessoa{
         this.crmv = crmv;
     }
 
-    public List<Especialidade> getEspecialidades() {
+    public Set<Especialidade> getEspecialidades() {
         return especialidades;
     }
 
-    public void setEspecialidades(List<Especialidade> especialidades) {
+    public void setEspecialidades(Set<Especialidade> especialidades) {
         this.especialidades = especialidades;
     }
 

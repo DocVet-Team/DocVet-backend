@@ -47,7 +47,7 @@ public class PessoaService {
 
         Pessoa pessoaExistente = repository.findByEmail(novaSenha.getEmail());
 
-        if (repository.existsById(pessoaExistente.getId())){
+        if (!(pessoaExistente == null)){
             pessoaExistente.setSenha(novaSenha.getSenha());
             repository.saveAndFlush(pessoaExistente);
         }else{
@@ -59,6 +59,9 @@ public class PessoaService {
         if (repository.existsByEmail(loginDados.getEmail()) && repository.existsBySenha(loginDados.getSenha())){
 
         }else{
+            // System.out.println("Entidade: " + loginDados.toString());
+            // System.out.println(loginDados.getEmail());
+            // System.out.println(loginDados.getSenha());
             throw new NotFoundException("Usuário não cadastrado");
         }
     }

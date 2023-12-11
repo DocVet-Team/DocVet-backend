@@ -1,6 +1,6 @@
 -- INSERT INTO tb_veterinario(cpf, email, nome) VALUES ('000.000.000-00', 'emailZe@gmail.com', 'Ze da Silva');
 
-INSERT INTO tb_pessoa(cpf, nome, email, senha) VALUES ('12345678911', 'Ricardo Lucas da Silva', 'ricardo@gmail.com.br', '123');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('12345678911', 'Ricardo Lucas da Silva', 'ricardo@gmail.com.br', '123', 'https://img.freepik.com/fotos-premium/feche-o-rosto-retrato-medico-homem-idoso-medico-especialista-clinico-geral-trabalho-em_717737-2660.jpg');
 INSERT INTO tb_pessoa(cpf, nome, email, senha) VALUES ('78945612332', 'Alberto Campos', 'alberto@gmail.com.br', '456');
 INSERT INTO tb_pessoa(cpf, nome, email, senha) VALUES ('15948723159', 'Lucas dos Santos', 'lucas@yahoo.com.br', '789');
 
@@ -9,6 +9,12 @@ INSERT INTO tb_veterinario(id, crmv) VALUES(1, '65465462');
 INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (1, '9-0000-0000');
 INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (1, '9-1111-1111');
 INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (2, '9-2222-2222');
+
+INSERT INTO tb_especialidade(especialidade) VALUES('Dermatologia');
+INSERT INTO tb_especialidade(especialidade) VALUES('Acupuntura');
+INSERT INTO tb_especialidade(especialidade) VALUES('Cardiologista');
+
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(1, 1);
 
 INSERT INTO tb_tipo_animal(nome) VALUES ('Cachorro');
 INSERT INTO tb_tipo_animal(nome) VALUES ('Gato');
@@ -585,11 +591,3 @@ INSERT INTO tb_cidades(nome, estado_id) VALUES('Taguatinga', 27);
 INSERT INTO tb_cidades(nome, estado_id) VALUES('Araguaçu', 27);
 INSERT INTO tb_cidades(nome, estado_id) VALUES('Wanderlândia', 27);
 INSERT INTO tb_cidades(nome, estado_id) VALUES('Palmeirante', 27);
-
-
-INSERT INTO tb_especialidade(especialidade) VALUES('Dermatologia');
-INSERT INTO tb_especialidade(especialidade) VALUES('Acupuntura');
-INSERT INTO tb_especialidade(especialidade) VALUES('Cardiologista');
-
-INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(1, 1);
-

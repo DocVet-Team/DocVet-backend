@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.docvet.docvet.domain.Veterinario;
 import br.com.docvet.docvet.domain.error.NotFoundException;
+import br.com.docvet.docvet.repository.EspecialidadeRepository;
 import br.com.docvet.docvet.repository.VeterinarioRepository;
 
 @Service
@@ -14,6 +15,8 @@ public class VeterinarioService {
 
     @Autowired
     private VeterinarioRepository repository;
+    // @Autowired
+    // private EspecialidadeRepository espRepository;
 
     public Veterinario getOne(Integer id){
         return repository.findById(id).orElseThrow(()-> new NotFoundException("Veterinário não encontrado: id="+id));
