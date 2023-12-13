@@ -3,6 +3,7 @@ package br.com.docvet.docvet.domain;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
@@ -27,7 +28,8 @@ public class Estado {
     @JsonView(Views.Base.class)
     private String nome;
 
-     @OneToMany(mappedBy = "estado", cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "estado", cascade = CascadeType.MERGE)
+    @JsonIgnore
     private List<Cidade> cidades;
 
 

@@ -1,7 +1,10 @@
 package br.com.docvet.docvet.domain;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -23,14 +26,12 @@ public class Especialidade {
 
     private String especialidade;
 
-
     @ManyToMany(cascade = {CascadeType.MERGE})
-    @JoinTable(name = "tb_vet_esp", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "esp_id"))
+    // @JoinTable(name = "tb_vet_esp", joinColumns = @JoinColumn(name = "vet_id"), inverseJoinColumns = @JoinColumn(name = "esp_id"))
+    @JoinTable(name = "tb_vet_esp", joinColumns = 
+    @JoinColumn(name = "esp_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "vet_id", referencedColumnName = "id"))
+    @JsonIgnore
     private Set<Veterinario> veterinarios;
-
-
-    // private Set<Veterinario> veterinarios;
-
 
     public Especialidade() {}
 

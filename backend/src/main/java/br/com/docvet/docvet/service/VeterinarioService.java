@@ -52,4 +52,8 @@ public class VeterinarioService {
         }
         repository.deleteById(id);
     }
+
+    public List<Veterinario> findByNome(String nome) {
+        return repository.findByNome(nome);
+    }
 }

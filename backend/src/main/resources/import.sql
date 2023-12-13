@@ -1,25 +1,109 @@
 -- INSERT INTO tb_veterinario(cpf, email, nome) VALUES ('000.000.000-00', 'emailZe@gmail.com', 'Ze da Silva');
 
 INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('12345678911', 'Ricardo Lucas da Silva', 'ricardo@gmail.com.br', '123', 'https://img.freepik.com/fotos-premium/feche-o-rosto-retrato-medico-homem-idoso-medico-especialista-clinico-geral-trabalho-em_717737-2660.jpg');
-INSERT INTO tb_pessoa(cpf, nome, email, senha) VALUES ('78945612332', 'Alberto Campos', 'alberto@gmail.com.br', '456');
-INSERT INTO tb_pessoa(cpf, nome, email, senha) VALUES ('15948723159', 'Lucas dos Santos', 'lucas@yahoo.com.br', '789');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('78945612332', 'Alberto Campos', 'alberto@gmail.com.br', '456', 'https://www.shopveterinario.com.br/blog/wp-content/uploads/2019/11/medico-veterinario-bem-sucedido-artigo.jpg');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('15948723159', 'Lucas dos Santos', 'lucas@yahoo.com.br', '789', 'https://img.freepik.com/fotos-premium/meu-melhor-paciente-veterinario-masculino-alegre-em-uniforme-de-trabalho-segurando-um-cachorro-e-sorrindo-em-pe-na-clinica-veterinaria_255667-36109.jpg');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('111.222.333-44', 'João Silva', 'joao.silva@gmail.com', 'senha123', 'https://jornaldoburitis.com.br/fotos/capa_7621c7c4a59-b215-4e63-a152-fe9d98b6b0d2.jpg');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('222.333.444-55', 'Maria Oliveira', 'maria.oliveira@gmail.com', 'outrasenha456', 'https://www.qualittas.com.br/blog/wp-content/uploads/2017/03/Vet-And-Cat.jpg');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('333.444.555-66', 'Leonardo Santos', 'leonardo.santos@gmail.com', 'senha789', 'https://uploads.metropoles.com/wp-content/uploads/2023/10/16193707/medico-veterinario.jpg');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('444.555.666-77', 'Yasmim Souza', 'yasmim.souza@gmail.com', 'senha456', 'https://caesegatos.com.br/wp-content/uploads/2020/11/mulher-1.jpg');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('555.666.777-88', 'Luiz Costa', 'luiz.costa@gmail.com', 'senha987', 'https://thumbs.dreamstime.com/z/veterin%C3%A1rio-do-homem-com-um-gato-83157615.jpg');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('666.777.888-99', 'Camila Lima', 'camila.lima@gmail.com', 'senha321', 'https://caesegatos.com.br/wp-content/uploads/2022/03/mulheres-1024x664.png');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('777.888.999-00', 'Fernando Pereira', 'fernando.pereira@gmail.com', 'senha654', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH3CPQLJ_BVziA4UmIZze3hmobWWLH2nUuOA&usqp=CAU');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('888.999.000-11', 'Julia Santos', 'julia.santos@gmail.com', 'senha012', 'https://portalt5-cdn1.cworks.cloud/fileadmin/_processed_/c/d/csm_mulher-veterinaria_ee374354db.jpg');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('999.000.111-22', 'Rafael Oliveira', 'rafael.oliveira@gmail.com', 'senha345', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT690GCX-cp1lk-N4YmtTBgnaXwPyuuGwlSSw&usqp=CAU');
+INSERT INTO tb_pessoa(cpf, nome, email, senha, foto) VALUES ('123.234.345-56', 'Ana Costa', 'ana.costa@gmail.com', 'senha678', 'https://cdn.shortpixel.ai/spai/q_glossy+ret_img+to_auto/eteit.univale.br/wp-content/uploads/2022/01/curso-tecnico-veterinaria-imagem-mulher-cuidando-de-cachorro-scaled.jpg');
 
-INSERT INTO tb_veterinario(id, crmv) VALUES(1, '65465462');
+
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(1, '65465462', 'Sou um veterinário comprometido e apaixonado pela saúde e bem-estar dos animais, dedicado a oferecer cuidados excepcionais e promover uma vida saudável para os nossos companheiros de quatro patas.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(2, '78978978', 'Com vasta experiência em medicina veterinária, estou empenhado em proporcionar o melhor atendimento para animais de estimação, buscando sempre inovações e tratamentos eficazes.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(3, '45645645', 'Meu compromisso é garantir o conforto e a saúde dos animais sob meus cuidados. Utilizo abordagens holísticas e práticas baseadas em evidências para promover o bem-estar.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(4, '32132132', 'Veterinário dedicado a melhorar a qualidade de vida dos animais. Trabalho com paixão e profissionalismo, adotando abordagens éticas e avançadas para o tratamento veterinário.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(5, '98798798', 'Busco constantemente atualizações e avanços na medicina veterinária para oferecer o mais alto padrão de cuidado aos animais. Minha missão é proporcionar uma vida saudável e feliz para os pets.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(6, '23423423', 'Especializado em cuidados preventivos e curativos, ofereço serviços veterinários abrangentes para garantir a saúde e felicidade de seus animais de estimação.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(7, '87687687', 'Comprometido com a excelência no atendimento veterinário, sou apaixonado por trabalhar com animais e proporcionar soluções eficazes para suas necessidades de saúde.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(8, '54354354', 'Veterinário experiente e atencioso, focado em estabelecer vínculos com os proprietários e fornecer cuidados individualizados para animais de estimação de todas as idades.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(9, '21021021', 'Minha abordagem compassiva e dedicada à medicina veterinária visa garantir que seus animais recebam os melhores cuidados, promovendo uma vida longa e saudável.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(10, '99999999', 'Profissional comprometido em oferecer cuidados veterinários excepcionais, visando o bem-estar e a felicidade de seus animais de estimação. Conte comigo para todas as suas necessidades veterinárias.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(11, '11111111', 'Sou um veterinário apaixonado por animais e comprometido em fornecer cuidados de alta qualidade. Meu objetivo é garantir a saúde e a felicidade de cada paciente.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(12, '22222222', 'Com anos de experiência em medicina veterinária, ofereço serviços abrangentes para atender às necessidades individuais de cada animal. Meu foco é proporcionar uma vida saudável e plena.');
+INSERT INTO tb_veterinario(id, crmv, descricao) VALUES(13, '33333333', 'Veterinário dedicado e compassivo, comprometido em estabelecer uma relação de confiança com os tutores e fornecer o melhor atendimento possível para seus queridos animais de estimação.');
+
+
+
+
+
+
+
+
+INSERT INTO veterinario_portes(portes, veterinario_id) VALUES(0, 1);
+INSERT INTO veterinario_portes(portes, veterinario_id) VALUES(1, 1);
+INSERT INTO veterinario_portes(portes, veterinario_id) VALUES(2, 1);
 
 INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (1, '9-0000-0000');
 INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (1, '9-1111-1111');
 INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (2, '9-2222-2222');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (2, '9-2134-2542');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (3, '9-3333-3333');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (3, '9-4444-4444');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (4, '9-5555-5555');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (4, '9-6666-6666');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (5, '9-7777-7777');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (5, '9-8888-8888');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (6, '9-9999-9999');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (6, '9-0000-0001');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (7, '9-1111-1112');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (7, '9-2222-2223');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (8, '9-3333-3334');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (8, '9-4444-4445');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (9, '9-5555-5556');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (9, '9-6666-6667');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (10, '9-7777-7778');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (10, '9-8888-8889');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (11, '9-9999-9990');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (11, '9-0000-0002');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (12, '9-1111-1113');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (12, '9-2222-2224');
+
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (13, '9-3333-3335');
+INSERT INTO pessoa_telefones(pessoa_id, telefones) VALUES (13, '9-4444-4446');
+
 
 INSERT INTO tb_especialidade(especialidade) VALUES('Dermatologia');
 INSERT INTO tb_especialidade(especialidade) VALUES('Acupuntura');
 INSERT INTO tb_especialidade(especialidade) VALUES('Cardiologista');
 
-INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(1, 1);
-
 INSERT INTO tb_tipo_animal(nome) VALUES ('Cachorro');
 INSERT INTO tb_tipo_animal(nome) VALUES ('Gato');
 INSERT INTO tb_tipo_animal(nome) VALUES ('Passaro');
 INSERT INTO tb_tipo_animal(nome) VALUES ('Peixe');
+
+
+
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(1, 1);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(2, 3);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(3, 3);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(4, 2);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(5, 1);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(6, 3);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(7, 2);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(8, 3);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(9, 2);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(10,1);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(11,2);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(12,1);
+INSERT INTO tb_vet_esp(vet_id, esp_id) VALUES(13,1);
+
 
 INSERT INTO tb_estados(nome) VALUES('Acre');
 INSERT INTO tb_estados(nome) VALUES('Alagoas');
@@ -591,3 +675,19 @@ INSERT INTO tb_cidades(nome, estado_id) VALUES('Taguatinga', 27);
 INSERT INTO tb_cidades(nome, estado_id) VALUES('Araguaçu', 27);
 INSERT INTO tb_cidades(nome, estado_id) VALUES('Wanderlândia', 27);
 INSERT INTO tb_cidades(nome, estado_id) VALUES('Palmeirante', 27);
+
+
+
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (1, 1, 'Centro', '12345-678', 'Clínica Veterinária XYZ', 'Sala 101', 'Rua Principal', '123');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (2, 2, 'Bairro Sul', '54321-876', 'Hospital Veterinário ABC', 'Andar 2', 'Avenida Secundária', '456');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (3, 3, 'Vila Verde', '98765-432', 'PetClinic', 'Sala 5', 'Travessa dos Animais', '789');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (4, 4, 'Centro', '87654-321', 'VetCure', 'Sala 3', 'Avenida dos Pets', '321');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (5, 5, 'Bairro Feliz', '23456-789', 'PetLove', 'Andar 1', 'Rua dos Animais', '654');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (6, 6, 'Vila dos Bichos', '56789-012', 'Clínica VetCare', 'Sala 7', 'Alameda dos Gatos', '987');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (7, 7, 'Bairro dos Pets', '10987-654', 'Amigo Animal', 'Andar 2', 'Praça dos Cães', '210');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (8, 8, 'Vila dos Gatos', '21098-765', 'PetVida', 'Sala 5', 'Rua das Aves', '543');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (9, 9, 'Centro Animal', '87654-321', 'VetCenter', 'Andar 1', 'Avenida dos Animais', '876');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (10, 10, 'Bairro dos Bichanos', '23456-789', 'PetClinic', 'Sala 3', 'Rua dos Gatos', '987');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (11, 11, 'Vila Animal', '56789-012', 'VetVida', 'Andar 2', 'Alameda dos Animais', '210');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (12, 12, 'Bairro PetFiel', '10987-654', 'PetVet', 'Sala 7', 'Praça dos Gatos', '543');
+INSERT INTO tb_atendimento(veterinario_id, cidade_id, bairro, cep, clinica, complemento, logradouro, numero) VALUES (13, 13, 'Vila dos Cães', '21098-765', 'Cão e Cia', 'Andar 1', 'Alameda dos Cães', '876');

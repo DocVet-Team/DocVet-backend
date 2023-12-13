@@ -64,4 +64,10 @@ public class VeterinarioResource {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/{nome}/")
+    public ResponseEntity<List<Veterinario>> findByNome(@PathVariable String nome){
+        List<Veterinario> vets = service.findByNome(nome);
+        return ResponseEntity.ok().body(vets);
+    }
+
 }

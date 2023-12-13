@@ -45,7 +45,7 @@ public class EndAtendimentoResource {
     public ResponseEntity<EndAtendimento> update(@PathVariable("id") Integer id, @RequestBody EndAtendimento endAtendimento){
         EndAtendimento enderecoOriginal = endAtendimentoService.findById(id);
         enderecoOriginal.setClinica(endAtendimento.getClinica());
-        enderecoOriginal.setLogadouro(endAtendimento.getLogadouro());
+        enderecoOriginal.setLogradouro(endAtendimento.getLogradouro());
         enderecoOriginal.setNumero(endAtendimento.getNumero());
         enderecoOriginal.setComplemento(endAtendimento.getComplemento());
         enderecoOriginal.setBairro(endAtendimento.getBairro());

@@ -24,7 +24,7 @@ public class EndAtendimento {
     private Cidade cidade;
 
     @ManyToOne
-    @JoinColumn(name = "veterianario_id", referencedColumnName = "id", nullable = true)
+    @JoinColumn(name = "veterinario_id", referencedColumnName = "id", nullable = true)
     @Getter@Setter
     private Veterinario veterinario;
 
@@ -35,7 +35,7 @@ public class EndAtendimento {
     @Getter@Setter
     private String clinica;
     @Getter@Setter
-    private String logadouro;
+    private String logradouro;
     @Getter@Setter
     private String numero;
     @Getter@Setter
